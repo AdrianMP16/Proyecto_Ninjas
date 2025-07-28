@@ -43,6 +43,7 @@ def leer_habilidades(archivo):
                 habilidad=partes[0]
                 puntos=int(partes[1])
                 datos.append((habilidad,puntos))
+        return iter(datos)
 
 def reconstruir_arbol(datos):
     try:
