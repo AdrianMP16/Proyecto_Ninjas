@@ -11,10 +11,10 @@ class NodoHabilidad:
         self.derecha = None
 
 def crear_arbol_ejemplo():
-    raiz = NodoHabilidad("Ataque Rápido")
-    raiz.izquierda = NodoHabilidad("Golpe Básico")
-    raiz.derecha = NodoHabilidad("Patada Voladora")
-    raiz.izquierda.izquierda = NodoHabilidad("Puñetazo Fuerte")
+    raiz = NodoHabilidad("Ataque Rápido", random.randint(5,10))
+    raiz.izquierda = NodoHabilidad("Golpe Básico", random.randint(5,10))
+    raiz.derecha = NodoHabilidad("Patada Voladora", random.randint(5,10))
+    raiz.izquierda.izquierda = NodoHabilidad("Puñetazo Fuerte", random.randint(5,10))
     return raiz
 
 def sumar_puntos(nodo):
