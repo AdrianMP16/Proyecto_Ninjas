@@ -66,7 +66,7 @@ def reconstruir_arbol(datos):
 
 def imprimir_arbol(nodo, nivel=0):
     if nodo:
-        print("  " * nivel + "- " + nodo.habilidad)
+        print("  " * nivel + f"- {nodo.habilidad} ({nodo.puntos})")
         imprimir_arbol(nodo.izquierda, nivel + 1)
         imprimir_arbol(nodo.derecha, nivel + 1)
 
