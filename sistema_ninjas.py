@@ -330,7 +330,8 @@ def menu_usuario(ninjas):
         print("5. Salir")
         op = input("Opción: ")
         if op == "1":
-            mostrar_arbol_habilidades(ninjas)
+            nombre=input("Nombre del ninja para ver su arbol: ").strip().lower()
+            mostrar_arbol_desde_archivo(nombre)
         elif op == "2":
             simular_combate_1v1(ninjas)
         elif op == "3":
