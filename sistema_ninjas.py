@@ -45,6 +45,15 @@ def leer_habilidades(archivo):
                 datos.append((habilidad,puntos))
         return iter(datos)
 
+def mostrar_arbol_desde_archivo(nombre):
+    try:
+        datos=leer_habilidades(nombre)
+        arbol=reconstruir_arbol(datos)
+        print(f"Arbol de habilidades de {nombre.capitalize()}:")
+        imprimir_arbol(arbol)
+    except FileNotFoundError:
+        print("No se encontro el archivo de habilidades.")
+
 def reconstruir_arbol(datos):
     try:
         habilidad,puntos=next(datos)
