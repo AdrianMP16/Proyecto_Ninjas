@@ -25,7 +25,7 @@ def sumar_puntos(nodo):
 
 def preorden_guardar(nodo, archivo):
     if nodo:
-        archivo.write(nodo.habilidad + "\n")
+        archivo.write(f"{nodo.habilidad},{nodo.puntos}\n")
         preorden_guardar(nodo.izquierda, archivo)
         preorden_guardar(nodo.derecha, archivo)
 
