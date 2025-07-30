@@ -9,6 +9,8 @@ class NodoHabilidad:
         self.puntos=puntos
         self.izquierda = None
         self.derecha = None
+        print("pepwe")
+        
 
 def crear_arbol_ejemplo():
     raiz = NodoHabilidad("Ataque Rápido", random.randint(5,10))
