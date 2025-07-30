@@ -369,7 +369,7 @@ def main():
             if id_usuario:
                 menu_usuario(ninjas)
         elif op == "4":
-            print("Saliendo...")
+            print("Saliendo del sistema...")
             break
         else:
             print("Opción inválida.")
