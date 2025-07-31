@@ -1,4 +1,0 @@
-Ataque Rápido,8
-Golpe Básico,5
-Puñetazo Fuerte,7
-Patada Voladora,8
