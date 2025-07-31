@@ -163,6 +163,10 @@ def eliminar_ninja(dic_ninjas, archivo_ninjas):
             print("ID no encontrado.")
             return
         nombre = dic_ninjas[id_ninja]['nombre']
+        confirmar = input(f"¿Estas seguro de eliminar al ninja {nombre}? (si/no): ").strip().lower()
+        if confirmar != 'si':
+            print("Eliminación cancelada.")
+            return
         archivo_habilidades = f"habilidades_{nombre}.txt"
         ninja_eliminado = dic_ninjas.pop(id_ninja)
         print(f"Ninja {ninja_eliminado['nombre']} eliminado exitosamente.")
