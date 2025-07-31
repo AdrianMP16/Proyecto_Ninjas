@@ -171,29 +171,29 @@ def actualizar_atributos(ninjas_dict, id_ninja):
         elif opcion == '2':
             val = input("Nueva Fuerza (50-100): ")
             if val.isdigit() and 50 <= int(val) <= 100:
-                ninja['atributos']['fuerza'] = int(val)
+                ninja['habilidades']['fuerza'] = int(val)
             else:
                 print("Valor inválido.")
         elif opcion == '3':
             val = input("Nueva Velocidad (50-100): ")
             if val.isdigit() and 50 <= int(val) <= 100:
-                ninja['atributos']['velocidad'] = int(val)
+                ninja['habilidades']['velocidad'] = int(val)
             else:
                 print("Valor inválido.")
         elif opcion == '4':
             val = input("Nueva Energia (50-100): ")
             if val.isdigit() and 50 <= int(val) <= 100:
-                ninja['atributos']['energia'] = int(val)
+                ninja['habilidades']['energia'] = int(val)
             else:
                 print("Valor inválido.")
         elif opcion == '5':
             val = input("Nuevo Poder (50-100): ")
             if val.isdigit() and 50 <= int(val) <= 100:
-                ninja['atributos']['poder'] = int(val)
+                ninja['habilidades']['poder'] = int(val)
             else:
                 print("Valor inválido.")
         elif opcion == '6':
-            ninja['estilo de pelea'] = input("Nuevo estilo de pelea: ")
+            ninja['habilidades']['estilo'] = input("Nuevo estilo de pelea: ")
         elif opcion == '7':
             break
         else:
