@@ -149,6 +149,56 @@ def mostrar_arbol(dic_ninjas, id_ninja):
     else:
         print("ID no encontrado")
 
+def actualizar_atributos(ninjas_dict, id_ninja):
+    if id_ninja not in ninjas_dict:
+        print("Ninja no encontrado.")
+        return
+    
+    ninja = ninjas_dict[id_ninja]
+    while True:
+        print(f"\nActualizando ninja: {ninja['nombre']} (ID: {id_ninja})")
+        print("1. Nombre")
+        print("2. Fuerza")
+        print("3. Velocidad")
+        print("4. Energia")
+        print("5. Poder")
+        print("6. Estilo de pelea")
+        print("7. Salir")
+        opcion = input("Seleccione atributo a actualizar: ")
+        
+        if opcion == '1':
+            ninja['nombre'] = input("Nuevo nombre: ")
+        elif opcion == '2':
+            val = input("Nueva Fuerza (50-100): ")
+            if val.isdigit() and 50 <= int(val) <= 100:
+                ninja['Atributos']['Fuerza'] = int(val)
+            else:
+                print("Valor inválido.")
+        elif opcion == '3':
+            val = input("Nueva Velocidad (50-100): ")
+            if val.isdigit() and 50 <= int(val) <= 100:
+                ninja['Atributos']['Velocidad'] = int(val)
+            else:
+                print("Valor inválido.")
+        elif opcion == '4':
+            val = input("Nueva Energia (50-100): ")
+            if val.isdigit() and 50 <= int(val) <= 100:
+                ninja['Atributos']['Energia'] = int(val)
+            else:
+                print("Valor inválido.")
+        elif opcion == '5':
+            val = input("Nuevo Poder (50-100): ")
+            if val.isdigit() and 50 <= int(val) <= 100:
+                ninja['Atributos']['Poder'] = int(val)
+            else:
+                print("Valor inválido.")
+        elif opcion == '6':
+            ninja['Estilo de pelea'] = input("Nuevo estilo de pelea: ")
+        elif opcion == '7':
+            break
+        else:
+            print("Opción inválida.")
+
 def eliminar_ninja(dic_ninjas, archivo_ninjas):
     if not dic_ninjas:
         print("No hay ninjas registrados para eliminar.")
@@ -193,7 +243,8 @@ def menu_admin(dic_ninjas):
         print("2. Mostrar Todos")
         print("3. Ver árbol de habilidades")
         print("4. Eliminar Ninja")
-        print("5. Salir")
+        print("5. Actualizar Habilidades")
+        print("6. Salir")
         op = input("Opción: ")
         if op == "1":
             id_actual = registrar_ninja(dic_ninjas, id_actual)
@@ -208,6 +259,10 @@ def menu_admin(dic_ninjas):
         elif op == "4":
             eliminar_ninja(dic_ninjas, archivo_ninjas)
         elif op == "5":
+            mostrar_todos(dic_ninjas)
+            t=int(input("Ingrese la id del ninja que quiere actualizar: "))
+            actualizar_atributos(dic_ninjas,t)
+        elif op == "6":
             break
         else:
             print("Opción inválida.")
